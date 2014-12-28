@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5E70155-B1C5-443E-B955-724FAFEBEF6B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VhpTimeLogger</RootNamespace>
+    <AssemblyName>VhpTimeLogger</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\Binaries\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yogesh.ExcelXml">
+      <HintPath>..\Binaries\Yogesh.ExcelXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Yogesh.Extensions">
+      <HintPath>..\Binaries\Yogesh.Extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityDataSource.cs" />
+    <Compile Include="Controls\ComboListMatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Copy of ComboListMatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PopupWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeSheetGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeSheetGrid.Designer.cs">
+      <DependentUpon>TimeSheetGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimeSheetLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeSheetLine.Designer.cs">
+      <DependentUpon>TimeSheetLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Totalen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Totalen.Designer.cs">
+      <DependentUpon>Totalen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diversen\Constants.cs" />
+    <Compile Include="Diversen\DatabaseNotAvailableException.cs" />
+    <Compile Include="Extensionmethods.cs" />
+    <Compile Include="Forms\Beheer\Activiteiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Beheer\Activiteiten.Designer.cs">
+      <DependentUpon>Activiteiten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Beheer\Projecten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Beheer\Projecten.Designer.cs">
+      <DependentUpon>Projecten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataGridPaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rapportage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rapportage.Designer.cs">
+      <DependentUpon>Rapportage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StartOfTheDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartOfTheDay.Designer.cs">
+      <DependentUpon>StartOfTheDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimeSheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeSheetForm.Designer.cs">
+      <DependentUpon>TimeSheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IObservable.cs" />
+    <Compile Include="Interfaces\IObserver.cs" />
+    <Compile Include="Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectDataSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\TimeSheetGrid.resx">
+      <DependentUpon>TimeSheetGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimeSheetLine.resx">
+      <DependentUpon>TimeSheetLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Totalen.resx">
+      <DependentUpon>Totalen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Beheer\Activiteiten.resx">
+      <DependentUpon>Activiteiten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Beheer\Projecten.resx">
+      <DependentUpon>Projecten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rapportage.resx">
+      <DependentUpon>Rapportage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartOfTheDay.resx">
+      <DependentUpon>StartOfTheDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeSheetForm.resx">
+      <DependentUpon>TimeSheetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Program.resx">
+      <DependentUpon>Program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VhpBusinessLogic\VhpBusinessLogic.csproj">
+      <Project>{74aa2dd5-1f28-45c1-8bc8-da82f49cd95b}</Project>
+      <Name>VhpBusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VhpDataEntities\VhpDataEntities.csproj">
+      <Project>{b0688fb7-53da-4d25-93fe-75c2bfaedb1f}</Project>
+      <Name>VhpDataEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\delete_icon.jpg" />
+    <Content Include="Images\icon_copy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
